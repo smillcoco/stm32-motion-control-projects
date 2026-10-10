@@ -1,6 +1,7 @@
 ﻿# 无人机系统
 
-本目录包含 STM32 飞控端和遥控器端工程，使用 FreeRTOS 和 SI24R1 2.4G 无线模块完成遥控、姿态与定高控制。
+本目录包含 STM32 飞控端和遥控器端两套工程，两者通过 SI24R1 2.4G 模块通信。
 
-- flight-controller：飞控固件
-- remote-controller：遥控器固件
+## 系统组成
+- flight-controller：接收遥控数据，处理 IMU、激光测距和电池数据，完成姿态、定高和电机控制
+- remote-controller：采集摇杆与按键，通过 OLED 显示状态并发送无线控制指令
